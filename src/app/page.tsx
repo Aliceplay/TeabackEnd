@@ -133,34 +133,6 @@ const Page: React.FC = () => {
                 </SelectContent>
               </Select>
             </div>
-
-            <div className="w-full flex gap-x-4 px-6 py-4 items-center justify-center">
-              <span className="mt-1 text-3xl font-bold">新增圖片</span>
-            </div>
-            {/* form */}
-            <Form {...form}>
-              <div className="w-full grid grid-cols-3 gap-x-4 px-6 py-4 flex items-center justify-center">
-                {/* A */}
-                <ImageUploader title="A區圖片"></ImageUploader>
-                {/* B */}
-                <ImageUploader title="B區圖片"></ImageUploader>
-                {/* C */}
-                <ImageUploader title="C區圖片"></ImageUploader>
-              </div>
-            </Form>
-
-            <div className="w-full grid grid-col px-6 py-4 flex items-center justify-center gap-1.5">
-              <InputArea></InputArea>
-              <Button
-                id="DataButton"
-                type="submit"
-                disabled={form.formState.isSubmitting}
-                className="block rounded-lg px-4 py-1 text-lg"
-              >
-                確認新增
-              </Button>
-            </div>
-
             <div className="grid gap-2 flex items-center justify-center w-full">
               {SHEET_SIDES.map((side) => (
                 <Sheet key={side} open={isOpen} onOpenChange={setIsOpen}>
@@ -186,7 +158,7 @@ const Page: React.FC = () => {
                           原始圖片
                         </Label>
 
-                        <Input id="name" value="File" className="col-span-3" />
+                        <Input id="name" defaultValue="File" className="col-span-3" />
                       </div>
                       <div className="grid grid-cols-4 items-center gap-4">
                         <ImageUp />
@@ -195,7 +167,7 @@ const Page: React.FC = () => {
                         </Label>
                         <Input
                           id="username"
-                          value="File"
+                          defaultValue="File"
                           className="col-span-3"
                         />
                       </div>
@@ -208,6 +180,36 @@ const Page: React.FC = () => {
                   </SheetContent>
                 </Sheet>
               ))}
+            </div>
+            <div className="w-full flex gap-x-4 px-6 py-4 items-center justify-center">
+              <span className="mt-1 text-3xl font-bold">新增區域圖片</span>
+            </div>
+            {/* form */}
+            <Form {...form}>
+              <div className="w-full grid grid-cols-3 gap-x-4 px-6 py-4 flex items-center justify-center">
+                {/* A */}
+                <ImageUploader title="A區圖片"></ImageUploader>
+                {/* B */}
+                <ImageUploader title="B區圖片"></ImageUploader>
+                {/* C */}
+                <ImageUploader title="C區圖片"></ImageUploader>
+              </div>
+            </Form>
+
+            
+
+            
+
+            <div className="w-full grid grid-col px-6 py-4 flex items-center justify-center gap-1.5">
+              <InputArea></InputArea>
+              <Button
+                id="DataButton"
+                type="submit"
+                disabled={form.formState.isSubmitting}
+                className="block rounded-lg px-4 py-1 text-lg"
+              >
+                確認新增
+              </Button>
             </div>
           </ResizablePanel>
           <ResizableHandle />
