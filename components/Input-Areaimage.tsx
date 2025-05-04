@@ -3,15 +3,27 @@ import { Label } from "@/components/ui/label";
 
 const InputArea = () => {
   return (
-    <div className="grid w-full max-w-md items-center gap-1.5">
-      <Label htmlFor="date">拍攝日期</Label>
-      <Input type="text" id="date" placeholder="0000-00-00" />
-      <Label htmlFor="weather">拍攝天氣</Label>
-      <Input type="text" id="weather" placeholder="晴陰雨" />
-      <Label htmlFor="growth">生長率</Label>
-      <Input type="text" id="growth" placeholder="00.00%" />
-      <Label htmlFor="plantingRate">生長情形</Label>
-      <Input type="text" id="plantingRate" placeholder="高中低" />
+    <div className="grid grid-cols-2 place-items-center w-full gap-6">
+      <div className="">
+        <Label htmlFor="date" className=" text-xl justify-center my-2">
+          拍攝日期
+        </Label>
+        <Input type="text" id="date" placeholder="2025-00-00" />
+        <Label htmlFor="weather" className=" text-xl justify-center my-2">
+          拍攝天氣
+        </Label>
+        <Input type="text" id="weather" placeholder="晴 / 陰 / 雨" />
+      </div>
+      <div className="md-4">
+        <Label htmlFor="growth" className=" text-xl  justify-center my-2">
+          生長率
+        </Label>
+        <Input type="text" id="growth" placeholder="00.00%" />
+        <Label htmlFor="plantingRate" className=" text-xl  justify-center my-2">
+          生長情形
+        </Label>
+        <Input type="text" id="plantingRate" placeholder="高 / 中 / 低" />
+      </div>
     </div>
   );
 };
