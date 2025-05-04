@@ -69,24 +69,24 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ title }) => {
 
   return (
     <Form {...form}>
-      <div className="flex flex-col items-center space-x-4">
+      <div className="flex flex-row items-center space-x-4">
         <form
           onSubmit={form.handleSubmit(onSubmit)}
-          className="flex items-center gap-x-6"
+          className="flex items-center"
         >
           {/*Form*/}
           <FormField
             control={form.control}
             name="image"
             render={() => (
-              <FormItem className="max:w-1/2">
+              <FormItem>
                 <FormLabel>
-                  <h2 className="text-xl">{title}</h2>
+                  <h2 className="text-xl w-full">{title}</h2>
                 </FormLabel>
                 <FormControl>
                   <div
                     {...getRootProps()}
-                    className="flex cursor-pointer flex-col items-center justify-center gap-2 rounded-lg border border-foreground p-4 px-3 shadow-sm shadow-foreground"
+                    className="flex cursor-pointer flex-col items-center justify-center rounded-lg border border-foreground p-4 shadow-sm shadow-foreground"
                   >
                     {preview && (
                       <img
@@ -96,10 +96,10 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({ title }) => {
                       />
                     )}
                     <ImagePlus
-                      className={` size-15 ${preview ? "hidden" : "block"}`}
+                      className={` size-15 ${preview ? "hidden" : "block"} text-gray-700`}
                     />
                     <Input {...getInputProps()} type="file" />
-                    {isDragActive ? <p>拖移圖片!</p> : <p>Click & Drag</p>}
+                    {isDragActive ? <p>拖移圖片!</p> : <p></p>}
                   </div>
                 </FormControl>
                 <FormMessage>

@@ -114,9 +114,9 @@ const Page: React.FC = () => {
         >
           {/* 左側面板 */}
           {/* drop */}
-          <ResizablePanel defaultSize={50}>
-            <div className="grid justify-items-center mt-2 gap-2">
-              <span className="grid justify-items-center mx-6 mt-1 text-3xl font-bold">
+          <ResizablePanel >
+            <div className="flex items-center justify-center mt-2 gap-4">
+              <span className="mx-6 mt-1 text-3xl font-bold ">
                 選擇茶園
               </span>
               <Select onValueChange={handleSelect}>
@@ -133,7 +133,7 @@ const Page: React.FC = () => {
                 </SelectContent>
               </Select>
             </div>
-            <div className="grid gap-2 flex items-center justify-center w-full">
+            <div className="grid gap-6 mt-6 flex items-center justify-center w-full">
               {SHEET_SIDES.map((side) => (
                 <Sheet key={side} open={isOpen} onOpenChange={setIsOpen}>
                   <SheetTrigger asChild>
@@ -181,12 +181,13 @@ const Page: React.FC = () => {
                 </Sheet>
               ))}
             </div>
-            <div className="w-full flex gap-x-4 px-6 py-4 items-center justify-center">
-              <span className="mt-1 text-3xl font-bold">新增區域圖片</span>
+            <div className="w-full flex gap-x-4 mt-6 px-4 py-4 items-center justify-center">
+              <span className="mt-1 text-3xl font-bold">上傳區域圖片</span>
             </div>
             {/* form */}
-            <Form {...form}>
-              <div className="w-full grid grid-cols-3 gap-x-4 px-6 py-4 flex items-center justify-center">
+            {/* <Form {...form}> */}
+              <div className="flex gap-0.5 px-2 py-2 items-center justify-evenly">
+              
                 {/* A */}
                 <ImageUploader title="A區圖片"></ImageUploader>
                 {/* B */}
@@ -194,7 +195,7 @@ const Page: React.FC = () => {
                 {/* C */}
                 <ImageUploader title="C區圖片"></ImageUploader>
               </div>
-            </Form>
+            {/* </Form> */}
 
             
 
@@ -215,14 +216,14 @@ const Page: React.FC = () => {
           <ResizableHandle />
           {/* 中間分隔線 */}
           {/* 右側面板 */}
-          <ResizablePanel defaultSize={50}>
+          {/* <ResizablePanel defaultSize={50}>
             <ResizablePanelGroup direction="vertical">
               <ResizableHandle />
               <div>
                 <InstantTable data={sampleData}></InstantTable>
               </div>
             </ResizablePanelGroup>
-          </ResizablePanel>
+          </ResizablePanel> */}
         </ResizablePanelGroup>
       </main>
     </div>
