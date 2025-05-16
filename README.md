@@ -32,10 +32,3 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
 
-待調整：
-bg-red-100
-text-xl font-bold
-標題大 選單大 同一行
-近一點 置中 淡一點
-表格頭 變大 置中
-交換位置
